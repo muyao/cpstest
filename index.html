@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Lightweight CPS Tester
+    </title>
+    <style>
+        body {
+            padding: 40px
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="clicked()">Click me</button>
+    <p id="cpsdisplay">CPS: 0</p>
+    <script>
+        "use strict";
+        let clicks = 0;
+        let cps = 0;
+        function clicked() {
+            clicks += 1
+        }
+        setInterval(function () {
+            document.getElementById("cpsdisplay").innerHTML = "CPS: " + cps;
+        }, 16);
+        setInterval(function () {
+            cps = clicks;
+            clicks = 0;
+        }, 1000);
+    </script>
+</body>
+
+</html>
